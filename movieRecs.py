@@ -8,7 +8,7 @@ client = pymongo.MongoClient("mongodb+srv://gauravsingh13020:R5CswiSLPdOiTasA@cl
 db = client.sample_mflix
 collection = db.movies
 
-hf_token = "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"
+hf_token = os.getenv("HF_TOKEN")
 embedding_url = "https://api-inference.huggingface.co/pipeline/feature-extraction/sentence-transformers/all-MiniLM-L6-v2"
 
 def generate_embedding(text: str) -> list[float]:
